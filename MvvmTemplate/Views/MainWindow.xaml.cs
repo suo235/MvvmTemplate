@@ -1,0 +1,24 @@
+﻿using System.Windows;
+using MvvmTemplate.ViewModels;
+
+namespace MvvmTemplate.Views;
+
+/// <summary>
+/// Interaction logic for MainWindow.xaml
+/// </summary>
+public partial class MainWindow : Window
+{
+    public MainWindow(IMainWindowViewModel viewModel)
+    {
+        InitializeComponent();
+
+        DataContext = viewModel;
+
+        Closed += (s, e) =>
+        {
+            (SettingsTab as IDisposable)?.Dispose();
+            (StatisticsTab as IDisposable)?.Dispose();
+            (AboutTab as IDisposable)?.Dispose();
+        };
+    }
+}

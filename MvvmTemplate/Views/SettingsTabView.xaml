@@ -1,0 +1,17 @@
+<UserControl
+    x:Class="MvvmTemplate.Views.SettingsTabView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:MvvmTemplate.ViewModels"
+    xmlns:v="clr-namespace:MvvmTemplate.Views">
+    <StackPanel Name="TabContent">
+
+        <StackPanel.DataContext>
+            <vm:SettingsTabViewModel/>
+        </StackPanel.DataContext>
+
+        <TextBox Margin="10" Text="{Binding DataText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <Button Content="Search" Margin="10" />
+
+    </StackPanel>
+</UserControl>

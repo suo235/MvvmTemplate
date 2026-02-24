@@ -1,0 +1,49 @@
+<Window x:Class="MvvmTemplate.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MvvmTemplate.Views"
+        xmlns:vm="clr-namespace:MvvmTemplate.ViewModels"
+        xmlns:v="clr-namespace:MvvmTemplate.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Style="{StaticResource MaterialDesignWindow}"
+        Title="LoginWindow" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Username -->
+        <TextBlock Text="Username" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="1"
+                 Margin="5"
+                 Text="{Binding Username.Value, UpdateSourceTrigger=PropertyChanged}" />
+
+        <!-- Password -->
+        <TextBlock Grid.Row="1"
+                   Text="Password"
+                   VerticalAlignment="Center"/>
+        <PasswordBox Grid.Row="1"
+                     Grid.Column="1"
+                     Margin="5" 
+                     PasswordChanged="PasswordChangedHandler"/>
+
+        <!-- Login Button -->
+        <Button Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Content="Login"
+                Margin="5"
+                Height="30"
+                Command="{Binding LoginCommand}" />
+    </Grid>
+</Window>
