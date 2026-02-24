@@ -1,0 +1,9 @@
+# Ignore Visual Studio Code settings folder
+.vscode/
+
+# Ignore all .db files
+*.db
+
+# Ignore build output folders
+bin/
+obj/
