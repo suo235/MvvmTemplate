@@ -5,6 +5,7 @@ using System.Reactive.Linq;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using MvvmTemplate;
 using MvvmTemplate.ViewModels;
+using MvvmTemplate.Models;
 using Reactive.Bindings;
 
 public class LoginWindowViewModelTest

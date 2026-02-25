@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 using MvvmTemplate.Views;
 using MvvmTemplate.ViewModels;
+using MvvmTemplate.Models;
 
 namespace MvvmTemplate;
 

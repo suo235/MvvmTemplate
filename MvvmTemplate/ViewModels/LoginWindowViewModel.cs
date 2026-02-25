@@ -5,6 +5,8 @@ using Reactive.Bindings;
 using Reactive.Bindings.Disposables;
 using Reactive.Bindings.Extensions;
 
+using MvvmTemplate.Models;
+
 namespace MvvmTemplate.ViewModels;
 
 public class LoginWindowViewModel : ILoginWindowViewModel

@@ -1,5 +1,7 @@
 using System.ComponentModel;
 
+using MvvmTemplate.Models;
+
 namespace MvvmTemplate.ViewModels;
 
 public class MainWindowViewModel : IMainWindowViewModel

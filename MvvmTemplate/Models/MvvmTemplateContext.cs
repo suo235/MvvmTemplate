@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace MvvmTemplate;
+namespace MvvmTemplate.Models;
 
 public class MvvmTemplateContext : DbContext
 {

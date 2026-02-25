@@ -1,4 +1,4 @@
-namespace MvvmTemplate;
+namespace MvvmTemplate.Models;
 
 public interface ILoginManager
 {

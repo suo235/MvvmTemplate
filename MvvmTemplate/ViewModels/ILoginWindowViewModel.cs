@@ -1,6 +1,8 @@
 using System.ComponentModel;
 
-namespace MvvmTemplate;
+using MvvmTemplate.Models;
+
+namespace MvvmTemplate.ViewModels;
 
 public delegate void LoginEventHandler(bool result);
 
