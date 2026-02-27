@@ -1,5 +1,7 @@
 using System.Windows.Controls;
 
+using MvvmTemplate.ViewModels;
+
 namespace MvvmTemplate.Views;
 
 /// <summary>
@@ -7,9 +9,11 @@ namespace MvvmTemplate.Views;
 /// </summary>
 public partial class StatisticsTabView : UserControl, IDisposable
 {
-    public StatisticsTabView()
+    public StatisticsTabView(IStatisticsTabViewModel viewModel)
     {
         InitializeComponent();
+
+        TabContent.DataContext = viewModel;
     }
 
     public void Dispose()

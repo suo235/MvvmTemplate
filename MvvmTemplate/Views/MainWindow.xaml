@@ -27,7 +27,7 @@
                     </StackPanel>
                 </TabItem.Header>
             </TabItem>
-            <TabItem>
+            <TabItem x:Name="StatisticsTab">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <materialDesign:PackIcon
@@ -40,9 +40,6 @@
                             VerticalAlignment="Center" />
                     </StackPanel>
                 </TabItem.Header>
-                <TabItem.Content>
-                    <v:StatisticsTabView x:Name="StatisticsTab" />
-                </TabItem.Content>
             </TabItem>
             <TabItem HorizontalAlignment="Right">
                 <TabItem.Header>

@@ -6,9 +6,6 @@
     xmlns:v="clr-namespace:MvvmTemplate.Views"
     xmlns:ScottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF">
     <Grid Name="TabContent">
-        <Grid.DataContext>
-            <vm:StatisticsTabViewModel/>
-        </Grid.DataContext>
         <ContentControl Content="{Binding Plot, Mode=OneTime}" />
     </Grid>
 </UserControl>
