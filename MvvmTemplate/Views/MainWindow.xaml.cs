@@ -16,7 +16,7 @@ public partial class MainWindow : Window
 
         Closed += (s, e) =>
         {
-            (SettingsTab as IDisposable)?.Dispose();
+            (SettingsTab.Content as IDisposable)?.Dispose();
             (StatisticsTab as IDisposable)?.Dispose();
             (AboutTab as IDisposable)?.Dispose();
         };

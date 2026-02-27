@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using MvvmTemplate.Views;
 using MvvmTemplate.ViewModels;
 using MvvmTemplate.Models;
+using System.Runtime.CompilerServices;
 
 namespace MvvmTemplate;
 
@@ -24,7 +25,9 @@ public partial class App : Application
     {
         base.OnStartup(e);
 
-        MainWindow = service_provider.GetRequiredService<MainWindow>();
+        var mainWindow = service_provider.GetRequiredService<MainWindow>();
+        mainWindow.SettingsTab.Content = service_provider.GetRequiredService<SettingsTabView>();
+        MainWindow = mainWindow;
 
         var loginWindow = service_provider.GetRequiredService<LoginWindow>();
         loginWindow.ShowDialog();

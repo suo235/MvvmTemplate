@@ -6,10 +6,6 @@
     xmlns:v="clr-namespace:MvvmTemplate.Views">
     <StackPanel Name="TabContent">
 
-        <StackPanel.DataContext>
-            <vm:SettingsTabViewModel/>
-        </StackPanel.DataContext>
-
         <TextBox Margin="10" Text="{Binding DataText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         <Button Content="Search" Margin="10" />
 
