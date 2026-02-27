@@ -59,10 +59,12 @@ public partial class App : Application
         services.AddScoped<ILoginWindowViewModel, LoginWindowViewModel>();
         services.AddScoped<IMainWindowViewModel, MainWindowViewModel>();
         services.AddScoped<ISettingsTabViewModel, SettingsTabViewModel>();
+        services.AddScoped<IStatisticsTabViewModel, StatisticsTabViewModel>();
 
         services.AddScoped<LoginWindow>();
         services.AddScoped<MainWindow>();
         services.AddScoped<SettingsTabView>();
+        services.AddScoped<StatisticsTabView>();
     }
 
     private readonly ServiceProvider service_provider;

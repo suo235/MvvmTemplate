@@ -3,7 +3,7 @@ using ScottPlot.WPF;
 
 namespace MvvmTemplate.ViewModels;
 
-public class StatisticsTabViewModel : INotifyPropertyChanged, IDisposable
+public class StatisticsTabViewModel : IStatisticsTabViewModel
 {
     public string DataText 
     {
