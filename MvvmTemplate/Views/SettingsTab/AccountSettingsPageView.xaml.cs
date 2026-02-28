@@ -5,11 +5,11 @@ using MvvmTemplate.ViewModels;
 namespace MvvmTemplate.Views;
 
 /// <summary>
-/// Interaction logic for SetttingsTabView.xaml
+/// Interaction logic for AccountSettingsPageView.xaml
 /// </summary>
-public partial class SettingsTabView : UserControl, IDisposable
+public partial class AccountSettingsPageView : UserControl, IDisposable
 {
-    public SettingsTabView(ISettingsTabViewModel viewModel)
+    public AccountSettingsPageView(IAccountSettingsPageViewModel viewModel)
     {
         InitializeComponent();
 
@@ -19,6 +19,5 @@ public partial class SettingsTabView : UserControl, IDisposable
     public void Dispose()
     {
         (TabContent.DataContext as IDisposable)?.Dispose();
-        (AccountSettingsPage.Content as IDisposable)?.Dispose();
     }
 }

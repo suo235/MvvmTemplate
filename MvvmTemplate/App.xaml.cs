@@ -29,6 +29,9 @@ public partial class App : Application
         mainWindow.SettingsTab.Content = service_provider.GetRequiredService<SettingsTabView>();
         mainWindow.StatisticsTab.Content = service_provider.GetRequiredService<StatisticsTabView>();
         mainWindow.AboutTab.Content = service_provider.GetRequiredService<AboutTabView>();
+
+        ((SettingsTabView)mainWindow.SettingsTab.Content).AccountSettingsPage.Content = service_provider.GetRequiredService<AccountSettingsPageView>();
+
         MainWindow = mainWindow;
 
         var loginWindow = service_provider.GetRequiredService<LoginWindow>();
@@ -64,11 +67,15 @@ public partial class App : Application
         services.AddScoped<IStatisticsTabViewModel, StatisticsTabViewModel>();
         services.AddScoped<IAboutTabViewModel, AboutTabViewModel>();
 
+        services.AddScoped<IAccountSettingsPageViewModel, AccountSettingsPageViewModel>();
+
         services.AddScoped<LoginWindow>();
         services.AddScoped<MainWindow>();
         services.AddScoped<SettingsTabView>();
         services.AddScoped<StatisticsTabView>();
         services.AddScoped<AboutTabView>();
+
+        services.AddScoped<AccountSettingsPageView>();
     }
 
     private readonly ServiceProvider service_provider;
