@@ -28,6 +28,7 @@ public partial class App : Application
         var mainWindow = service_provider.GetRequiredService<MainWindow>();
         mainWindow.SettingsTab.Content = service_provider.GetRequiredService<SettingsTabView>();
         mainWindow.StatisticsTab.Content = service_provider.GetRequiredService<StatisticsTabView>();
+        mainWindow.AboutTab.Content = service_provider.GetRequiredService<AboutTabView>();
         MainWindow = mainWindow;
 
         var loginWindow = service_provider.GetRequiredService<LoginWindow>();

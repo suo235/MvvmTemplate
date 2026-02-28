@@ -18,7 +18,7 @@ public partial class MainWindow : Window
         {
             (SettingsTab.Content as IDisposable)?.Dispose();
             (StatisticsTab.Content as IDisposable)?.Dispose();
-            (AboutTab as IDisposable)?.Dispose();
+            (AboutTab.Content as IDisposable)?.Dispose();
         };
     }
 }
