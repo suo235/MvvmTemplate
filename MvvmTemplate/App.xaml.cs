@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using MvvmTemplate.Views;
 using MvvmTemplate.ViewModels;
 using MvvmTemplate.Models;
+using System.Runtime.CompilerServices;
 
 namespace MvvmTemplate;
 
@@ -24,7 +25,11 @@ public partial class App : Application
     {
         base.OnStartup(e);
 
-        MainWindow = service_provider.GetRequiredService<MainWindow>();
+        var mainWindow = service_provider.GetRequiredService<MainWindow>();
+        mainWindow.SettingsTab.Content = service_provider.GetRequiredService<SettingsTabView>();
+        mainWindow.StatisticsTab.Content = service_provider.GetRequiredService<StatisticsTabView>();
+        mainWindow.AboutTab.Content = service_provider.GetRequiredService<AboutTabView>();
+        MainWindow = mainWindow;
 
         var loginWindow = service_provider.GetRequiredService<LoginWindow>();
         loginWindow.ShowDialog();
@@ -55,9 +60,15 @@ public partial class App : Application
 
         services.AddScoped<ILoginWindowViewModel, LoginWindowViewModel>();
         services.AddScoped<IMainWindowViewModel, MainWindowViewModel>();
+        services.AddScoped<ISettingsTabViewModel, SettingsTabViewModel>();
+        services.AddScoped<IStatisticsTabViewModel, StatisticsTabViewModel>();
+        services.AddScoped<IAboutTabViewModel, AboutTabViewModel>();
 
         services.AddScoped<LoginWindow>();
         services.AddScoped<MainWindow>();
+        services.AddScoped<SettingsTabView>();
+        services.AddScoped<StatisticsTabView>();
+        services.AddScoped<AboutTabView>();
     }
 
     private readonly ServiceProvider service_provider;

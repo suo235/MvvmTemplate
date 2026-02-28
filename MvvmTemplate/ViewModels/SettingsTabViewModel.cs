@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace MvvmTemplate.ViewModels;
 
-public class SettingsTabViewModel : INotifyPropertyChanged, IDisposable
+public class SettingsTabViewModel : ISettingsTabViewModel
 {
     public string DataText 
     {
