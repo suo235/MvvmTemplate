@@ -48,6 +48,9 @@ public partial class App : Application
             var mainWindowViewModel = service_provider.GetRequiredService<IMainWindowViewModel>();
             mainWindowViewModel.LoginUser = loginWindowViewModel.LoginUser;
 
+            var accountSettingsPageViewModel = service_provider.GetRequiredService<IAccountSettingsPageViewModel>();
+            accountSettingsPageViewModel.Username.Value = loginWindowViewModel.LoginUser?.Name ?? string.Empty;
+
             MainWindow.Show();
         }
     }
