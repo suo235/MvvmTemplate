@@ -32,4 +32,13 @@ public class MockLoginManager : ILoginManager
         LoginUser = new User{Id = 1, Name = name, Password = password, IsAdmin = 0, IsDeleted = 0};
         return true;
     }
+
+    public void UpdateUser(string name, string password)
+    {
+        if(LoginUser != null)
+        {
+            LoginUser.Name = name;
+            LoginUser.Password = password;
+        }
+    }
 }

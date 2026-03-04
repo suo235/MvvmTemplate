@@ -30,8 +30,6 @@ public partial class App : Application
         mainWindow.StatisticsTab.Content = service_provider.GetRequiredService<StatisticsTabView>();
         mainWindow.AboutTab.Content = service_provider.GetRequiredService<AboutTabView>();
 
-        ((SettingsTabView)mainWindow.SettingsTab.Content).AccountSettingsPage.Content = service_provider.GetRequiredService<AccountSettingsPageView>();
-
         MainWindow = mainWindow;
 
         var loginWindow = service_provider.GetRequiredService<LoginWindow>();
@@ -48,8 +46,7 @@ public partial class App : Application
             var mainWindowViewModel = service_provider.GetRequiredService<IMainWindowViewModel>();
             mainWindowViewModel.LoginUser = loginWindowViewModel.LoginUser;
 
-            var accountSettingsPageViewModel = service_provider.GetRequiredService<IAccountSettingsPageViewModel>();
-            accountSettingsPageViewModel.Username.Value = loginWindowViewModel.LoginUser?.Name ?? string.Empty;
+            ((SettingsTabView)mainWindow.SettingsTab.Content).AccountSettingsPage.Content = service_provider.GetRequiredService<AccountSettingsPageView>();
 
             MainWindow.Show();
         }

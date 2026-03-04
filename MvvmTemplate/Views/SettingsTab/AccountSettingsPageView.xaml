@@ -9,6 +9,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -26,16 +27,28 @@
         <TextBlock Grid.Row="1"
                 Text="Password"
                 VerticalAlignment="Center"/>
-        <PasswordBox Grid.Row="1"
+        <PasswordBox Name="Password"
+                    Grid.Row="1"
                     Grid.Column="1"
-                    Margin="5" />
+                    Margin="5"
+                    PasswordChanged="PasswordChangedHandler" />
 
         <!-- Confirm Password -->
         <TextBlock Grid.Row="2"
                 Text="Confirm Password"
                 VerticalAlignment="Center"/>
-        <PasswordBox Grid.Row="2"
+        <PasswordBox Name="ConfirmPassword" 
+                    Grid.Row="2"
                     Grid.Column="1"
-                    Margin="5" />
+                    Margin="5"
+                    PasswordChanged="ConfirmPasswordChangedHandler" />
+
+        <!-- Save Button -->
+        <Button Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Content="Save"
+                Margin="5"
+                Height="30"
+                Command="{Binding SaveCommand}" />
     </Grid>
 </UserControl>

@@ -51,4 +51,28 @@ public class LoginManager : ILoginManager
             }
         }
     }
+
+    public void UpdateUser(string name, string password)
+    {
+        if(!IsLogined || LoginUser == null)
+        {
+            throw new InvalidOperationException("User is not logined.");
+        }
+
+        MvvmTemplateContext dbContext = new MvvmTemplateContext();
+        User? user = dbContext.Users
+            .Where(u => u.Id == LoginUser.Id)
+            .FirstOrDefault();
+        if(user == null)
+        {
+            throw new InvalidOperationException("User not found.");
+        }
+        else
+        {
+            user.Name = name;
+            user.Password = password;
+            dbContext.SaveChanges();
+            LoginUser = user;
+        }
+    }
 }

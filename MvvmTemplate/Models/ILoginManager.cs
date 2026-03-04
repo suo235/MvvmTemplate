@@ -7,4 +7,6 @@ public interface ILoginManager
     User? LoginUser{ get; }
 
     bool Login(string name, string password);
+
+    void UpdateUser(string name, string password);
 }
